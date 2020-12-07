@@ -3,7 +3,7 @@
 
 pkgname=mugshot
 pkgver=0.4.2
-pkgrel=1
+pkgrel=2
 pkgver_min=${pkgver%.*}
 _git=01cc800f467dd3661bf158fb26820d37042fb0a0
 pkgdesc="Program to update personal user details"
