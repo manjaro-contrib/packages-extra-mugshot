@@ -11,31 +11,32 @@ arch=('any')
 url="https://launchpad.net/mugshot"
 license=('GPLv3')
 depends=('accountsservice'
-	'gtk3'
-	'python-cairo'
-	'python-dbus'
-	'python-distutils-extra'
-	'python-gobject'
-	'python-pexpect')
+  'dbus-python'
+  'gtk3'
+  'hicolor-icon-theme'
+  'python'
+  'python-cairo'
+  'python-gobject'
+  'python-pexpect')
 makedepends=('python-distutils-extra' 'intltool')
 optdepends=('cheese: webcam support')
 options=(!emptydirs)
 source=("https://github.com/bluesabre/mugshot/releases/download/mugshot-$pkgver/mugshot-$pkgver.tar.gz"
-	"avatars-$_git.tar.gz::http://github.com/oberon2007/avatars/archive/$_git.tar.gz")
+        "avatars-$_git.tar.gz::http://github.com/oberon2007/avatars/archive/$_git.tar.gz")
 md5sums=('034eec0d2351504b46c9bdc1d23276b6'
          'feb11c6d8f7031df752b2c57c9e42ff8')
 
 prepare() {
-    cd $srcdir/$pkgname-$pkgver
+    cd "$pkgname-$pkgver"
     # patches here
 }
 
 package() {
-    cd $srcdir/$pkgname-$pkgver
-    python3 setup.py install --root $pkgdir
+    cd "$pkgname-$pkgver"
+    python setup.py install --root="$pkgdir" --optimize=1
 
     # install our stock avatars
-    cd $srcdir/avatars-$_git
-    install -dm755 $pkgdir/usr/share/pixmaps
-    cp -r faces $pkgdir/usr/share/pixmaps
+    cd "$srcdir/avatars-$_git"
+    install -d "$pkgdir/usr/share/pixmaps"
+    cp -r faces "$pkgdir/usr/share/pixmaps"
 }
