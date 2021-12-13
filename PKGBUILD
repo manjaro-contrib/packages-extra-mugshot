@@ -2,7 +2,7 @@
 # Contributor: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=mugshot
-pkgver=0.4.2
+pkgver=0.4.3
 pkgrel=2
 pkgver_min=${pkgver%.*}
 _git=01cc800f467dd3661bf158fb26820d37042fb0a0
@@ -23,7 +23,7 @@ optdepends=('cheese: webcam support')
 options=(!emptydirs)
 source=("https://github.com/bluesabre/mugshot/releases/download/mugshot-$pkgver/mugshot-$pkgver.tar.gz"
         "avatars-$_git.tar.gz::http://github.com/oberon2007/avatars/archive/$_git.tar.gz")
-md5sums=('034eec0d2351504b46c9bdc1d23276b6'
+md5sums=('1c504dcec181159ff5aa896bed9605ab'
          'feb11c6d8f7031df752b2c57c9e42ff8')
 
 prepare() {
