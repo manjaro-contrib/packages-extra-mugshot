@@ -1,30 +1,31 @@
-# Maintainer: Somasis <somasis@cryptolab.net>
-# Contributor: Bernhard Landauer <oberon@manjaro.org>
+# Maintainer: Bernhard Landauer <oberon@manjaro.org>
+
+# Arch credits:
+# Maintainer: twa022 <twa022 at gmail dot com>
+# Contributor: Somasis <somasis@cryptolab.net>
 
 pkgname=mugshot
 pkgver=0.4.3
-pkgrel=2
-pkgver_min=${pkgver%.*}
+pkgrel=3
 _git=01cc800f467dd3661bf158fb26820d37042fb0a0
 pkgdesc="Program to update personal user details"
 arch=('any')
-url="https://launchpad.net/mugshot"
-license=('GPLv3')
+url="https://bluesabre.org/projects/mugshot"
+license=('GPL3')
 depends=('accountsservice'
-  'dbus-python'
   'gtk3'
   'hicolor-icon-theme'
   'python'
   'python-cairo'
   'python-gobject'
   'python-pexpect')
-makedepends=('python-distutils-extra' 'intltool')
+makedepends=('python-distutils-extra')
 optdepends=('cheese: webcam support')
 options=(!emptydirs)
-source=("https://github.com/bluesabre/mugshot/releases/download/mugshot-$pkgver/mugshot-$pkgver.tar.gz"
-        "avatars-$_git.tar.gz::http://github.com/oberon2007/avatars/archive/$_git.tar.gz")
-md5sums=('1c504dcec181159ff5aa896bed9605ab'
-         'feb11c6d8f7031df752b2c57c9e42ff8')
+source=("https://github.com/bluesabre/mugshot/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz"
+        "avatars-$_git.tar.gz::https://github.com/oberon-manjaro/avatars/archive/$_git.tar.gz")
+sha256sums=('2f66869a58bf45de29e065dfdaa591f32a88ec91682c0fa15accfd9f58c3c19c'
+            'cf3a89089a63374b6b13e022f32c001e79e913dce6961fbe0f494cb5ed3cad90')
 
 prepare() {
     cd "$pkgname-$pkgver"
@@ -38,5 +39,5 @@ package() {
     # install our stock avatars
     cd "$srcdir/avatars-$_git"
     install -d "$pkgdir/usr/share/pixmaps"
-    cp -r faces "$pkgdir/usr/share/pixmaps"
+    cp -r faces "$pkgdir/usr/share/pixmaps/"
 }
