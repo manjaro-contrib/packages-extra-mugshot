@@ -6,7 +6,7 @@
 
 pkgname=mugshot
 pkgver=0.4.3
-pkgrel=3
+pkgrel=4
 _git=01cc800f467dd3661bf158fb26820d37042fb0a0
 pkgdesc="Program to update personal user details"
 arch=('any')
