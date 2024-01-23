@@ -1,7 +1,5 @@
 # Maintainer: Bernhard Landauer <oberon@manjaro.org>
-
-# Arch credits:
-# Maintainer: twa022 <twa022 at gmail dot com>
+# Contributor: twa022 <twa022 at gmail dot com>
 # Contributor: Somasis <somasis@cryptolab.net>
 
 pkgname=mugshot
@@ -11,11 +9,22 @@ _git=01cc800f467dd3661bf158fb26820d37042fb0a0
 pkgdesc="User profile configuration utility"
 arch=('any')
 url="https://bluesabre.org/projects/mugshot"
-license=('GPL3')
-depends=('accountsservice' 'gtk3' 'hicolor-icon-theme' 'python' 'python-cairo'
-         'python-gobject' 'python-pexpect')
-makedepends=('python-build' 'python-distutils-extra' 'python-installer'
-             'python-setuptools' 'python-wheel')
+license=('GPL-3.0-or-later')
+depends=(
+  'accountsservice'
+  'gtk3'
+  'hicolor-icon-theme'
+  'python-cairo'
+  'python-gobject'
+  'python-pexpect'
+)
+makedepends=(
+  'python-build'
+  'python-distutils-extra'
+  'python-installer'
+  'python-setuptools'
+  'python-wheel'
+)
 checkdepends=('appstream-glib')
 optdepends=('cheese: webcam support')
 source=("https://github.com/bluesabre/mugshot/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz"
