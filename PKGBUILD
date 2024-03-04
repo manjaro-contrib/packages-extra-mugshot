@@ -25,7 +25,7 @@ makedepends=(
   'python-setuptools'
   'python-wheel'
 )
-checkdepends=('appstream-glib')
+checkdepends=('appstream')
 optdepends=('cheese: webcam support')
 source=("https://github.com/bluesabre/mugshot/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz"
         "avatars-$_git.tar.gz::https://github.com/oberon-manjaro/avatars/archive/$_git.tar.gz")
@@ -44,7 +44,7 @@ build() {
 
 check() {
   cd "$pkgname-$pkgver"
-  appstream-util validate-relax --nonet "data/metainfo/$pkgname.appdata.xml"
+  appstreamcli validate --no-net "data/metainfo/$pkgname.appdata.xml"
   desktop-file-validate build/share/applications/org.bluesabre.Mugshot.desktop
 }
 
