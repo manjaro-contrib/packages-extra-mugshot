@@ -4,7 +4,7 @@
 
 pkgname=mugshot
 pkgver=0.4.3
-pkgrel=6
+pkgrel=7
 pkgdesc="User profile configuration utility"
 arch=('any')
 url="https://bluesabre.org/projects/mugshot"
@@ -28,7 +28,7 @@ checkdepends=('appstream')
 optdepends=('cheese: webcam support')
 _commit=01cc800f467dd3661bf158fb26820d37042fb0a0
 source=("https://github.com/bluesabre/mugshot/releases/download/$pkgname-$pkgver/$pkgname-$pkgver.tar.gz"
-        "avatars-$_commit.tar.gz::https://github.com/oberon-manjaro/avatars/archive/$_commit.tar.gz")
+        "avatars-${_commit}.tar.gz::https://github.com/oberon-manjaro/avatars/archive/${_commit}.tar.gz")
 sha256sums=('2f66869a58bf45de29e065dfdaa591f32a88ec91682c0fa15accfd9f58c3c19c'
             'cf3a89089a63374b6b13e022f32c001e79e913dce6961fbe0f494cb5ed3cad90')
 
@@ -53,7 +53,7 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
 
   # install our stock avatars
-  cd "$srcdir/avatars-$_commit"
+  cd "$srcdir/avatars-${_commit}"
   install -d "$pkgdir/usr/share/pixmaps"
   cp -r faces "$pkgdir/usr/share/pixmaps/"
 }
