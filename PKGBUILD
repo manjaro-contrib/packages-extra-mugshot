@@ -6,7 +6,7 @@
 
 pkgname=mugshot
 pkgver=0.4.3
-pkgrel=8
+pkgrel=9
 pkgdesc="User profile configuration utility"
 arch=('any')
 url="https://bluesabre.org/projects/mugshot"
@@ -19,6 +19,7 @@ depends=(
   'python-cairo'
   'python-gobject'
   'python-pexpect'
+  'which'
 )
 makedepends=(
   'git'
