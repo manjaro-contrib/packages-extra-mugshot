@@ -7,10 +7,10 @@
 pkgname=mugshot
 pkgver=0.4.3
 pkgrel=9
-pkgdesc="User profile configuration utility"
+pkgdesc="User Management Utility for Linux"
 arch=('any')
 url="https://bluesabre.org/projects/mugshot"
-license=('GPL-3.0-or-later')
+license=('GPL-3.0-only')
 depends=(
   'accountsservice'
   'gtk3'
