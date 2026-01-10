@@ -6,7 +6,7 @@
 
 pkgname=mugshot
 pkgver=0.4.3
-pkgrel=9
+pkgrel=10
 pkgdesc="User Management Utility for Linux"
 arch=('any')
 url="https://bluesabre.org/projects/mugshot"
