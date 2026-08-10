@@ -1,5 +1,5 @@
 # Maintainer: Mark Wagie <mark at manjaro dot org>
-# Contributor: Bernhard Landauer <oberon@manjaro.org>
+# Contributor: Bernhard Landauer <bernhard@manjaro.org>
 # Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: twa022 <twa022 at gmail dot com>
 # Contributor: Somasis <somasis@cryptolab.net>
